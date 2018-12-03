@@ -3,7 +3,25 @@ img {
   max-height: auto;
 }
 
-.landscape {
-    height: 30px;
-    width: 80px;
+.navbar-brand {
+  max-height: 250px;
+  max-width: 250px;
+  display: table;
+}
+
+.nav {
+  display: table;
+}
+
+.navbar-nav {
+  display: table;
+}
+
+.nav li {
+  vertical-align: middle;
+}
+
+.navbar-nav li {
+  padding-top: 0.4em;
+  vertical-align: middle;
 }
