@@ -12,7 +12,7 @@ class NavbarComponent extends Component {
         <Navbar.Header>
           <Navbar.Brand>
             <a href="#brand">
-                <img classname="tialogo" src={'https://github.com/DarkArtistry/nano-tia/blob/master/src/navbar/tialogo.png?raw=true'} />
+                <img className="tialogo" src={'https://github.com/DarkArtistry/nano-tia/blob/master/src/navbar/tialogo.png?raw=true'} />
             </a>
           </Navbar.Brand>
           <Navbar.Toggle />
