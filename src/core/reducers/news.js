@@ -9,9 +9,10 @@ const news = (state = { news: []}, action) => {
       }
       break;
     case 'GET_NEWS_SUCCESS':
+    console.log('reducer result', action);
     return {
       ...state,
-      news: action.response.data,
+      data: action.news,
       isFetching: false,
     }
       break;

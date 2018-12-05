@@ -44,7 +44,7 @@ function mapDispatchToProps (dispatch) {
 }
 
 function mapStateToProps (state) {
-  return { news: state.news }
+  return { }
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(App);
