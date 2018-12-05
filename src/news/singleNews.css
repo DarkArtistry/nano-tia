@@ -1,0 +1,28 @@
+
+.image {
+  -webkit-flex-shrink: 0;
+  -ms-flex-negative: 0;
+  flex-shrink: 0;
+  width: 96px;
+  height: 54px;
+}
+
+.image img {
+  object-fit: cover;
+  display: inline-block;
+  background-color: rgba(0, 0, 0, 0.067);
+}
+
+  @media (min-width: 860px) {
+    .image img {
+      width: 332px;
+      height: 186px;
+    }
+  }
+
+  @media (min-width: 640px) {
+    .image img {
+      width: 250px;
+      height: 140px;
+    }
+  }
