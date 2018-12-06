@@ -1,0 +1,50 @@
+.container2 {
+  word-spacing: 0;
+}
+
+.container2 {
+  cursor: pointer;
+  color: #707070;
+  text-decoration: none;
+}
+
+.container2 > a img {
+  object-fit: cover;
+  display: inline-block;
+  background-color: rgba(0, 0, 0, 0.067);
+  border-radius: 123123px;
+  margin-right: 0.4em;
+  vertical-align: middle;
+  max-width: 24px;
+  max-height: 24px;
+}
+
+.container2 > h1 {
+  font-size: 21px;
+  font-family: Montserrat, Futura, "Gill Sans", "Gill Sans MT", "Century Gothic", CenturyGothic, sans-serif;
+  letter-spacing: -0.01em;
+  line-height: 1.45;
+  color: #171717;
+  /* margin-top: 0;
+  padding-top: 0; */
+  display: block;
+  /* margin: 0.67em 0; */
+  font-size: 2em;
+  /* margin-block-start: 0.67em;
+  margin-block-end: 0.67em;
+  margin-inline-start: 0px;
+  margin-inline-end: 0px; */
+  font-weight: bold;
+}
+
+@media only screen and (min-width: 992px) {
+  .container2 > h1 {
+      font-size: 37px;
+  }
+}
+
+@media only screen and (min-width: 768px) {
+  .container2 > h1 {
+    font-size: 28px;
+  }
+}

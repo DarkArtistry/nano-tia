@@ -5,6 +5,7 @@ import logo from './logo.svg';
 import './App.css';
 import NavbarComponent from './navbar/navbar.js';
 import NewsComponent from './news/news.js';
+import NewsDetail from './news/newsDetail';
 import Bio from './bio/bio.js';
 import { getNews } from './actions'
 
@@ -27,6 +28,7 @@ class App extends Component {
             <Route exact path="/" component={NewsComponent} />
             <Route path="/news" component={NewsComponent} />
             <Route path="/bio" component={Bio} />
+            <Route path="/newsdetail" component={NewsDetail}/>
           </header>
 
         </div>

@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Button } from 'react-bootstrap';
+import { Button , Grid } from 'react-bootstrap';
 import { connect } from 'react-redux';
 import './news.css';
 import SingleNews from './singleNews';
@@ -18,11 +18,13 @@ class NewsComponent extends Component {
             <a href="/subscription"><Button className="primarybtn" type="button">Subscribe today</Button></a>
           </div>
         </div>
-        {news && news.data && news.data.map((post) => {
-          return (
+        <Grid>
+          {news && news.data && news.data.map((post) => {
+            return (
               <SingleNews post={post}/>
-          )
-        })}
+            )
+          })}        
+        </Grid>
       </div>
     );
   }

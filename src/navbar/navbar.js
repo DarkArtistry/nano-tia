@@ -11,7 +11,7 @@ class NavbarComponent extends Component {
       <Navbar collapseOnSelect>
         <Navbar.Header>
           <Navbar.Brand>
-            <a href="#brand">
+            <a href="/">
                 <img className="tialogo" src={'https://github.com/DarkArtistry/nano-tia/blob/master/src/navbar/tialogo.png?raw=true'} />
             </a>
           </Navbar.Brand>
