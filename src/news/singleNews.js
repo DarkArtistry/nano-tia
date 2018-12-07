@@ -31,7 +31,7 @@ class SingleNews extends Component {
       <Row>
         <div className="post-item">
           <Col className="image" xs={6} md={4}>
-            <img src={thumbnail} />
+            <img src={thumbnail} alt={title + ' image'}/>
           </Col>
           <Col xs={12} md={8}>
             <div className="body">

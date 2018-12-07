@@ -7,6 +7,15 @@
   padding-left: 0px;
 }
 
+.image > img {
+  object-fit: cover;
+  display: inline-block;
+  background-color: rgba(0, 0, 0, 0.067);
+  padding-right: 0px;
+  padding-left: 0px;
+  width: 100%;
+}
+
 .post-item {
   display: -webkit-box;
   display: -webkit-flex;
@@ -64,6 +73,7 @@ h2 {
   cursor: pointer;
   color: #707070;
   text-decoration: none;
+  padding-left: 32px;
 }
 
 .container > a img {
@@ -100,4 +110,41 @@ h2 {
 .container a {
   color: #707070;
   text-decoration: none;
+}
+
+@media only screen and (max-width: 768px) {
+  .excerpt {
+    display: none;
+  }
+
+  .body > h2 {
+    font-size: 16px;
+  }
+
+  .container {
+    font-size: 12px;
+  }
+
+  .image {
+    background-color: rgba(0, 0, 0, 0);
+  }
+
+  .image > img {
+    width: 96px;
+  }
+
+
+  .body {
+    padding-left: 0px;
+    padding-top: 0px;
+  }
+
+  .post-item {
+    padding-left: 0px;
+  }
+
+  .title {
+    margin-top: 0px;
+  }
+
 }

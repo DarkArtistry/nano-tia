@@ -27,7 +27,7 @@ class NewsDetail extends Component {
           <Col xs={12} md={8}>
             <div className="container2">
               <a>
-                <img src={author && author.avatar_url} alt="animage"/>
+                <img src={author && author.avatar_url} alt={title + ' image'}/>
                 {author && author.display_name} .
               </a> {moment(date_gmt).fromNow()} . {read_time} min read
               <h1>
