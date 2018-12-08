@@ -18,7 +18,7 @@ class NewsDetail extends Component {
       read_time: props.history.location && props.history.location.state && props.history.location.state.read_time,
       featured_image: props.history.location && props.history.location.state && props.history.location.state.featured_image,
       content: props.history.location && props.history.location.state && props.history.location.state.content,
-      paywalled: true
+      paywalled: false
     };
   }
 
@@ -57,7 +57,7 @@ class NewsDetail extends Component {
                 <div>
                   <div className="paywalled">
                     <div className="article">
-                      {ReactHtmlParser(content)}  
+                      {ReactHtmlParser(content)}
                     </div>
                   </div>
                 </div>
