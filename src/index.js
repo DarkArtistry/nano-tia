@@ -6,7 +6,9 @@ import App from './App';
 import * as serviceWorker from './serviceWorker';
 import configureStore from './core/configureStore';
 
-const state = {};
+const state = {
+  news: []
+};
 const store = configureStore(state);
 
 ReactDOM.render(
