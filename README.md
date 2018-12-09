@@ -1,10 +1,20 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# TIA_NANO
 
-## Available Scripts
+> a Kenneth Goh Zhen Hao . 振豪 . 恭一 production
+
+This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app). Please checkout [Available Scripts](#Available_Scripts) to run project.
+
+
+
+## <a name="#Available_Scripts">Available Scripts</a>
 
 In the project directory, you can run:
 
-### `npm start`
+### `npm install` or `yarn install`
+
+to begin
+
+### `npm start` or `yarn start`
 
 Runs the app in the development mode.<br>
 Open [http://localhost:3000](http://localhost:3000) to view it in the browser.

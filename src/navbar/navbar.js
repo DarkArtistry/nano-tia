@@ -25,7 +25,7 @@ class NavbarComponent extends Component {
         </Nav>
         <Nav pullRight>
           <NavItem eventKey={1} href="#">
-            <Link to="/bio">Kenneth Goh Zhen Hao . 振豪 . 恭一</Link>
+            <a add a target="_blank"  to="https://www.kennethgzh.com">Kenneth Goh Zhen Hao . 振豪 . 恭一</a>
           </NavItem>
         </Nav>
       </Navbar.Collapse>
