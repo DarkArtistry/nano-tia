@@ -56,7 +56,6 @@ what i did was :
 2. #### Check for the availbility of the lower sized images, set the alt text.
 3. #### Recheck and touch up on the CSS styling.
 4. #### Run the Audit
-
   ![audit1](https://github.com/DarkArtistry/nano-tia/blob/develop/readmeImage/chromeAudit1.png)
 
   from the image which was the first audit using chrome dev tools there some missing images that did not had alt text and loading all post at once on the loading screen means the images took time to load that were loading. I had to set an infinte loop and load only 5 post per render.
