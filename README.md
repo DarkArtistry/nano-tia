@@ -28,7 +28,7 @@ Also I designed the extra wording "NANO" in my logo, to make it feel more person
 ### React & Redux
 
 Then I went back to refresh my memory on react and redux.
-There were component lifecycle changes in the react library that I to make use of and also I had a blur memory of redux's structure at that point of time.
+There were component lifecycle changes in the react library that I to make use of and also I had a blur memory of redux's structure at that point of time. Also i would like to mention that i'm using [React Router](https://reacttraining.com/react-router/web/guides/quick-start) for this project.
 
 * #### React
   * [componentDidMount()](https://reactjs.org/docs/react-component.html#componentdidmount)
