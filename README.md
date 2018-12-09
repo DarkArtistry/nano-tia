@@ -59,6 +59,7 @@ what i did was :
   ![audit1](https://github.com/DarkArtistry/nano-tia/blob/develop/readmeImage/chromeAudit1.png)
 
   from the image which was the first audit using chrome dev tools there some missing images that did not had alt text and loading all post at once on the loading screen means the images took time to load that were loading. I had to set an infinte loop and load only 5 post per render.
+
 5. Set the rendering to 5 news.  
 6. #### Set a counter for the current rendered index of the posts.
 7. #### Set the infinite loop based on rerendering from the start of the index. HAHAHAHA. i got help from stackoverflow and javascriptinfo of how to check if the page was near the bottom.
