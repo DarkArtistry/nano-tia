@@ -52,7 +52,7 @@ So basically we :
 
 what i did was :
 
-1. #### I saved the list of 30 post in the redux store.
+1. #### I saved the list of 30 post in the redux store. made use of [react-html-parser](https://www.npmjs.com/package/react-html-parser) to render the content.
 2. #### Check for the availbility of the lower sized images, set the alt text.
 3. #### Recheck and touch up on the CSS styling.
 4. #### Run the Audit
