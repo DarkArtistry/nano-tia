@@ -121,6 +121,20 @@ I would like to thank [Prima](https://www.linkedin.com/in/primaulia/?originalSub
 
 And [Eric Lu](https://www.linkedin.com/in/ericluwj/?originalSubdomain=sg) the first person that gave me a chance to work as a software engineer and thought me many advance modules, and let me handled task that gradually built my confidence as a software engineer.
 
+### So It didn't work out..
+
+#### few things I realised
+
+1. just the night after my submission, I met a fellow software engineer friend(i met him in Starbucks where i usually study/work) whom enlightened me that the word press api can be queried with a wp-json/2.0/?pages=X
+
+2. Also, I didn't actually refactored my codes to reflect my understanding of DRY (Don't Repeat Yourself) Principles. But there was really too much work I had on hand for my current position and i just wanted to clear this assignment.
+
+3. But still Lester was kind enough to share with me this [article, React Anti-Patterns: Props in Initial State](https://medium.com/@justintulk/react-anti-patterns-props-in-initial-state-28687846cc2e) which did make my understanding concrete.
+
+### Finally, I would still like to complete this project. maybe i will dig somemore time this week. :D
+
+#### To Be Continued...
+
 
 ## <a name="#Available_Scripts">Available Scripts</a>
 
