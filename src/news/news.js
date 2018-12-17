@@ -3,6 +3,7 @@ import { Button , Grid } from 'react-bootstrap';
 import { connect } from 'react-redux';
 import './news.css';
 import SingleNews from './singleNews';
+import { getNews } from '../actions'
 
 class NewsComponent extends Component {
 
@@ -18,7 +19,7 @@ class NewsComponent extends Component {
   }
 
   handleScroll (e) {
-    let currentState = this.state;
+    let { pageNumber } = this.props;
     let { currentCount, newsDisplay, allNews } = this.state;
     let scrollHeight = Math.max(
       document.body.scrollHeight, document.documentElement.scrollHeight,
@@ -28,24 +29,18 @@ class NewsComponent extends Component {
     console.log('hi', window.scrollY, window.innerHeight, scrollHeight, newsDisplay.length)
     if(window.scrollY + window.innerHeight > scrollHeight - 100) {
       // NOTE : load next 5
-      if (currentCount === allNews.length) {
-        let nextFive = allNews.slice(0, 5);
-        this.setState({
-          newsDisplay: [...newsDisplay,...nextFive],
-          currentCount: 0,
-        });
-      } else {
-        let nextFive = allNews.slice(currentCount, currentCount + 5);
-        this.setState({
-          newsDisplay: [...newsDisplay,...nextFive],
-          currentCount: currentCount + nextFive.length,
-        });
+      if (allNews.length - currentCount < 10 ) {
+        this.props.getNews({ pageNumber })
       }
+      let nextFive = allNews.slice(currentCount, currentCount + 5);
+      this.setState({
+        newsDisplay: [...newsDisplay,...nextFive],
+        currentCount: currentCount + nextFive.length,
+      });
     }
   }
 
   componentDidMount () {
-    console.log('1')
     let { news } = this.props;
     if (news && news.data) {
       let { currentCount, newsDisplay } = this.state;
@@ -107,11 +102,18 @@ class NewsComponent extends Component {
 
 function mapDispatchToProps (dispatch) {
   return {
+    getNews: function (params) {
+      dispatch(getNews(params))
+    }
   }
 }
 
 function mapStateToProps (state) {
-  return { news: state.news }
+  console.log('THE STATE', state);
+  return {
+    news: state.news,
+    pageNumber: state.news.pageNumber
+  }
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(NewsComponent);
