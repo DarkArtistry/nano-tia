@@ -1,8 +1,6 @@
 import { CALL_API } from '../middleware/api';
 import { newsActions } from './newsActions';
 
-const PLUS_NEWS_VIEWED = 'PLUS_NEWS_VIEWED';
-
 function fetchActionSection (section, route, params) {
   switch (section) {
     case 'news':

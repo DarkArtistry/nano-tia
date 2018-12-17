@@ -129,12 +129,50 @@ And [Eric Lu](https://www.linkedin.com/in/ericluwj/?originalSubdomain=sg) the fi
 
 2. Also, I didn't actually refactored my codes to reflect my understanding of DRY (Don't Repeat Yourself) Principles. But there was really too much work I had on hand for my current position and i just wanted to clear this assignment.
 
-3. But still Lester was kind enough to share with me this [article, React Anti-Patterns: Props in Initial State](https://medium.com/@justintulk/react-anti-patterns-props-in-initial-state-28687846cc2e) which did make my understanding concrete.
+3. But still Lester was kind enough to share with me this [article, React Anti-Patterns: Props in Initial State](https://medium.com/@justintulk/react-anti-patterns-props-in-initial-state-28687846cc2e) which did make my understanding concrete. However, it’s NOT an anti-pattern if you make it clear that the prop is only seed data for the component’s internally-controlled state:
 
 ### Finally, I would still like to complete this project. maybe i will dig somemore time this week. :D
 
 #### To Be Continued...
 
+### And So the Journey continues !
+
+1. I modularize the types of actions, in this case newsActions file was create where it is supposed to return an object of the related route. Doing this will help reduce the length of the actions folder.
+
+2. Finally updated the API middleware file that was created previously, it checks if the object given has any API to be called, if there's it would send out a request type dispatch and than call the API and dispatch success types or failure types, If there is no API to be called it then moves on to the next thunk object. This file needs more work as im just temporarily specifying the objects if there's no API to be called.
+
+```
+const callAPI = action[CALL_API]
+// console.log('thus callAPI is ...', callAPI)
+if (typeof callAPI === 'undefined') {
+  return next({ type: action })
+}
+const { method, types } = action;
+// NOTE: not done to find out how to generalize success and failure response
+// NOTE: we fire off the request state to the reducer first to set isFetching to true. and then fire off the callAPI
+next({ type: types[0] })
+return callApi(store, callAPI, method).then(
+  response => next({
+    response,
+    type: types[1],
+  }), error => next({
+    error: (error && error.message) || 'Something bad happened',
+    type: types[2]
+  })
+)
+```
+
+3. Updated the reducer to add in requested posts.
+
+4. Check the count and length of the all news array, if its lesser than 10 news left, request for more !
+
+```
+if (allNews.length - currentCount < 10 ) {
+  this.props.getNews({ pageNumber })
+}
+```
+
+## --- The End :)---
 
 ## <a name="#Available_Scripts">Available Scripts</a>
 
