@@ -1,32 +1,26 @@
-import axios from 'axios';
-import {tiahost} from '../core/utils';
-
-const GET_NEWS_REQUEST = 'GET_NEWS_REQUEST';
-const GET_NEWS_SUCCESS = 'GET_NEWS_SUCCESS';
-const GET_NEWS_FAILURE = 'GET_NEWS_FAILURE';
+import { CALL_API } from '../middleware/api';
+import { newsActions } from './newsActions';
 
 const PLUS_NEWS_VIEWED = 'PLUS_NEWS_VIEWED';
 
-export function getNews () {
-  return async (dispatch) => {
-    dispatch({
-      type: GET_NEWS_REQUEST,
-    });
-    let allPost = await axios.get(`${tiahost}/wp-json/techinasia/2.0/posts`);
-    console.log('allPost', allPost);
-    dispatch({
-      type: GET_NEWS_SUCCESS,
-      news: allPost.data.posts,
-    });
-    console.log('ok done with actions');
+function fetchActionSection (section, route, params) {
+  switch (section) {
+    case 'news':
+      let actionObject = newsActions(params, route)
+      actionObject = actionObject.types.length > 1 ? actionObject : actionObject.types[0];
+      return async (dispatch, getState) => {
+        dispatch(actionObject)
+      }
+      break;
+    default:
+
   }
 }
 
+export function getNews (params) {
+  return fetchActionSection('news', 'getNews', params);
+}
+
 export function plusNewsViewed () {
-  return async (dispatch) => {
-    dispatch({
-      type: PLUS_NEWS_VIEWED,
-    });
-    console.log('ok done with actions');
-  }
+  return fetchActionSection('news', 'plusNewsViewed');
 }
