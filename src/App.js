@@ -11,12 +11,9 @@ import { getNews } from './actions'
 
 class App extends Component {
 
-  constructor(props) {
-    super(props);
-  }
-
   componentDidMount() {
-    this.props.loadInitialData();
+    let { pageNumber } = this.props;
+    this.props.loadInitialData({ pageNumber });
   }
 
   render() {
@@ -46,7 +43,9 @@ function mapDispatchToProps (dispatch) {
 }
 
 function mapStateToProps (state) {
-  return { }
+  return {
+    pageNumber: state.pageNumber
+  }
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(App);

@@ -6,35 +6,22 @@ var moment = require('moment');
 
 class SingleNews extends Component {
 
-  constructor(props) {
-    super(props);
-    this.state = {
-      title: props.post.title,
-      author: props.post.author,
-      excerpt: props.post.excerpt,
-      date_gmt: props.post.date_gmt,
-      read_time: props.post.read_time,
-      featured_image: props.post.featured_image,
-      content: props.post.content,
-      seo: props.post.seo
-    };
-  }
-
   render() {
-    const { title , author , excerpt, date_gmt, read_time, featured_image, seo } = this.state;
+    const { title , author , excerpt, date_gmt, read_time, featured_image, seo } = this.props.post;
+    let singlePostItem = this.props.post;
     const thumbnail = (
       (seo && seo.image) ||
-      featured_image.source ||
-      (featured_image.attachment_meta.sizes.medium && featured_image.attachment_meta.sizes.medium.url) ||
-      (featured_image.attachment_meta.sizes.thumbnail && featured_image.attachment_meta.sizes.thumbnail.url) ||
-      (featured_image.attachment_meta.sizes.large && featured_image.attachment_meta.sizes.large.url)
+      (featured_image && featured_image.source) ||
+      (featured_image && featured_image.attachment_meta.sizes.medium && featured_image.attachment_meta.sizes.medium.url) ||
+      (featured_image && featured_image.attachment_meta.sizes.thumbnail && featured_image.attachment_meta.sizes.thumbnail.url) ||
+      (featured_image && featured_image.attachment_meta.sizes.large && featured_image.attachment_meta.sizes.large.url)
     )
     const mobileThumbnail = (
-      (featured_image.attachment_meta.sizes.thumbnail && featured_image.attachment_meta.sizes.thumbnail.url) ||
+      (featured_image && featured_image.attachment_meta.sizes.thumbnail && featured_image.attachment_meta.sizes.thumbnail.url) ||
       (seo && seo.image) ||
-      featured_image.source ||
-      (featured_image.attachment_meta.sizes.medium && featured_image.attachment_meta.sizes.medium.url) ||
-      (featured_image.attachment_meta.sizes.large && featured_image.attachment_meta.sizes.large.url)
+      (featured_image && featured_image && featured_image.source) ||
+      (featured_image && featured_image.attachment_meta.sizes.medium && featured_image.attachment_meta.sizes.medium.url) ||
+      (featured_image && featured_image.attachment_meta.sizes.large && featured_image.attachment_meta.sizes.large.url)
     )
     const mobileView = window.innerWidth < 500;
 
@@ -46,8 +33,8 @@ class SingleNews extends Component {
           </Col>
           <Col xs={12} md={8}>
             <div className="body">
-              <h2 className="title"><Link to={{ pathname: "/newsdetail", state: this.state }} >{title}</Link></h2>
-              <div className="excerpt"><Link to={{ pathname: "/newsdetail", state: this.state }} >{excerpt}</Link></div>
+              <h2 className="title"><Link to={{ pathname: "/newsdetail", state: singlePostItem }} >{title}</Link></h2>
+              <div className="excerpt"><Link to={{ pathname: "/newsdetail", state: singlePostItem }} >{excerpt}</Link></div>
               <div className="container">
                 <a>
                   <img src={author.avatar_url}/>

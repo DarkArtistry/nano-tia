@@ -11,13 +11,6 @@ class NewsDetail extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      title: props.history.location && props.history.location.state && props.history.location.state.title,
-      author: props.history.location && props.history.location.state && props.history.location.state.author,
-      excerpt: props.history.location && props.history.location.state && props.history.location.state.excerpt,
-      date_gmt: props.history.location && props.history.location.state && props.history.location.state.date_gmt,
-      read_time: props.history.location && props.history.location.state && props.history.location.state.read_time,
-      featured_image: props.history.location && props.history.location.state && props.history.location.state.featured_image,
-      content: props.history.location && props.history.location.state && props.history.location.state.content,
       paywalled: false
     };
   }
@@ -35,9 +28,10 @@ class NewsDetail extends Component {
   }
 
   render() {
-    const { title , author, date_gmt, read_time, content, paywalled } = this.state;
-    const articleLength = document.body.scrollHeight;
-    console.log(articleLength);
+    const { title , author, date_gmt, read_time, content } = this.props.history.location.state;
+    const { paywalled } = this.state;
+    // const articleLength = document.body.scrollHeight;
+    // console.log(articleLength);
     return (
       <div>
         <Grid>

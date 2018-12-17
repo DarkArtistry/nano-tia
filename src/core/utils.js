@@ -1,1 +1,1 @@
-export const tiahost = 'https://www.techinasia.com'
+export const tiahost = 'https://www.techinasia.com';

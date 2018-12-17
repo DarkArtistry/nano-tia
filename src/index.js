@@ -7,7 +7,8 @@ import * as serviceWorker from './serviceWorker';
 import configureStore from './core/configureStore';
 
 const state = {
-  news: []
+  news: [],
+  pageNumber: 0
 };
 const store = configureStore(state);
 
